@@ -148,7 +148,7 @@ Meteor.methods
           cl "err: #{err}"
           cl "stderr: #{stderr}"
           cl "stdout: #{stdout}"
-          fut.return err or stderr or 'success'
+          fut.return err.toString() or stderr.toString() or 'success'
         return fut.wait()
 
 
