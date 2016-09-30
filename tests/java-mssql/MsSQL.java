@@ -9,6 +9,7 @@ public class MsSQL {
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		//System.out.println(args.length);
 		try {
+		    args[1] = args[1].replaceAll("\\\\", "");
             System.out.println(args[0]);
             System.out.println(args[1]);
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
