@@ -93,6 +93,7 @@ Meteor.startup ->
 
           dasInfo.DEL_DB_QRY.forEach (query) ->
 #            query = "select * from dasuploader.dasuploader"
+            query = "update TBCB_BOARD_ARTICLE set TITLE='@@AUTOMATICALLY_REMOVED_BY_DAS@@20160101@@', NAME='', EMAIL='', CONTENT='',TYPE_F='D'  where ARTICLE_SEQ=150301"
             console.log('!!!query!!!')
             console.log(query)
             cp = require 'child_process'
