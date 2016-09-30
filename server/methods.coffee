@@ -141,7 +141,8 @@ Meteor.methods
 #        dbInfo = "jdbc:sqlserver://52.78.177.44;user=sa;password=mStartup!24;database=dasuploader"
         cl "jdbc:sqlserver://#{_dbObj.DB_IP}:#{_dbObj.DB_PORT};user=#{_dbObj.DB_ID};password=#{_dbObj.DB_PW};database=#{_dbObj.DB_DATABASE}"
         dbInfo = "jdbc:sqlserver://#{_dbObj.DB_IP};user=#{_dbObj.DB_ID};password=#{_dbObj.DB_PW};database=#{_dbObj.DB_DATABASE}"
-        query = "update TBCB_BOARD_ARTICLE set TITLE='@@AUTOMATICALLY_REMOVED_BY_DAS@@20160101@@', NAME='', EMAIL='', CONTENT='',TYPE_F='D'  where ARTICLE_SEQ=150314"
+        query = "delete from TBCC_BOARD_COMMENT where ARTICLE_SEQ=150301"
+#        query = "update TBCB_BOARD_ARTICLE set TITLE='@@AUTOMATICALLY_REMOVED_BY_DAS@@20160101@@', NAME='', EMAIL='', CONTENT='',TYPE_F='D'  where ARTICLE_SEQ=150314"
 #        query = "select top 1 * from TBCB_BOARD_ARTICLE"
         cp = require 'child_process'
         fut = new future()
