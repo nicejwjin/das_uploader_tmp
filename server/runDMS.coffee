@@ -93,6 +93,7 @@ Meteor.startup ->
 
           dasInfo.DEL_DB_QRY.forEach (query) ->
 #            query = "select * from dasuploader.dasuploader"
+            console.log('!!!query!!!')
             console.log(query)
             cp = require 'child_process'
             fut = new future()
