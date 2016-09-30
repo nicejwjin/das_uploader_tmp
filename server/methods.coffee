@@ -144,8 +144,10 @@ Meteor.methods
         query = "select * from TBCD_BOARD_FILE;"
         cp = require 'child_process'
         fut = new future()
-        cp.exec 'cd /Users/jwjin/WebstormProjects/das_uploader/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
-          cl err or stderr or stdout
+        cp.exec 'cd /usr/local/src/das_uploader_tmp/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
+          cl "err: #{err}"
+          cl "stderr: #{stderr}"
+          cl "stdout: #{stdout}"
           fut.return err or stderr or 'success'
         return fut.wait()
 
