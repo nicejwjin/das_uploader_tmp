@@ -15,8 +15,12 @@ public class MsSQL {
 		Statement sta = conn.createStatement();
 		String Sql = args[1];
 		ResultSet rs = sta.executeQuery(Sql);
-		while (rs.next()) {
-			System.out.println(rs.getString("req_date"));
+		if(rs.next()) {
+		    System.out.println(rs.getString(1));
 		}
+
+		//while (rs.next()) {
+		//	System.out.println(rs.getString(1));
+		//}
 	}
 }
