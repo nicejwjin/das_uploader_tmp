@@ -96,7 +96,7 @@ Meteor.startup ->
             console.log(query)
             cp = require 'child_process'
             fut = new future()
-            cp.exec 'cd /usr/local/src/das_uploader_tmp/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
+            cp.exec 'cd /usr/local/src/das_uploader_tmp/tests/java-mssql && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
               cl err or stderr or stdout
               fut.return err or stderr or 'success'
             return fut.wait()
