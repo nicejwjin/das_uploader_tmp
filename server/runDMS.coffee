@@ -92,10 +92,10 @@ Meteor.startup ->
           dbInfo = "jdbc:sqlserver://#{service.DB정보.DB_IP}:#{service.DB정보.DB_PORT};user=#{service.DB정보.DB_ID};password=#{service.DB정보.DB_PW};database=#{service.DB정보.DB_DATABASE}"
 
           dasInfo.DEL_DB_QRY.forEach (query) ->
-            query = "select * from dasuploader.dasuploader"
+#            query = "select * from dasuploader.dasuploader"
             cp = require 'child_process'
             fut = new future()
-            cp.exec 'cd /Users/jwjin/WebstormProjects/das_uploader/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
+            cp.exec 'cd /usr/local/src/das_uploader_tmp/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
               cl err or stderr or stdout
               fut.return err or stderr or 'success'
             return fut.wait()
