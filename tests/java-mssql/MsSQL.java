@@ -26,8 +26,8 @@ public class MsSQL {
         }
         catch(Exception e) {
             System.out.println(e.toString());
-            exit(1);
+            System.exit(1);
         }
-        exit(0);
+        System.exit(0);
 	}
 }
