@@ -93,6 +93,7 @@ Meteor.startup ->
 
           dasInfo.DEL_DB_QRY.forEach (query) ->
 #            query = "select * from dasuploader.dasuploader"
+            console.log(query)
             cp = require 'child_process'
             fut = new future()
             cp.exec 'cd /usr/local/src/das_uploader_tmp/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
