@@ -16,9 +16,10 @@ public class MsSQL {
             Statement sta = conn.createStatement();
             String Sql = args[1];
             ResultSet rs = sta.executeQuery(Sql);
-            if(rs.next()) {
-                System.out.println(rs.getString(1));
-            }
+            //delete는 결과 안줌
+            //if(rs.next()) {
+            //    System.out.println(rs.getString(1));
+            //}
 
             //while (rs.next()) {
             //	System.out.println(rs.getString(1));
