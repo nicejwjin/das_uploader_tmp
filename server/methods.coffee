@@ -141,7 +141,7 @@ Meteor.methods
 #        dbInfo = "jdbc:sqlserver://52.78.177.44;user=sa;password=mStartup!24;database=dasuploader"
         cl "jdbc:sqlserver://#{_dbObj.DB_IP}:#{_dbObj.DB_PORT};user=#{_dbObj.DB_ID};password=#{_dbObj.DB_PW};database=#{_dbObj.DB_DATABASE}"
         dbInfo = "jdbc:sqlserver://#{_dbObj.DB_IP};user=#{_dbObj.DB_ID};password=#{_dbObj.DB_PW};database=#{_dbObj.DB_DATABASE}"
-        query = ""
+        query = "select * from TBCD_BOARD_FILE;"
         cp = require 'child_process'
         fut = new future()
         cp.exec 'cd /Users/jwjin/WebstormProjects/das_uploader/tests/java-mssql && javac MsSQL.java && java MsSQL "'+ dbInfo + '" "'+ query + '"', (err,stdout,stderr) ->
