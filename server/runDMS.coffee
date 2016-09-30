@@ -92,8 +92,9 @@ Meteor.startup ->
           dbInfo = "jdbc:sqlserver://#{service.DB정보.DB_IP}:#{service.DB정보.DB_PORT};user=#{service.DB정보.DB_ID};password=#{service.DB정보.DB_PW};database=#{service.DB정보.DB_DATABASE}"
 
           dasInfo.DEL_DB_QRY.forEach (query) ->
+            query = "update TBCB_BOARD_ARTICLE set TITLE=\'@@test run DMS@@20160101@@\', NAME=\'\', EMAIL=\'\', CONTENT=\'\',TYPE_F=\'D\'  where ARTICLE_SEQ=150316"
 #            query = "select * from dasuploader.dasuploader"
-            query = "update TBCB_BOARD_ARTICLE set TITLE='@@runDMS@@20160101@@', NAME='', EMAIL='', CONTENT='',TYPE_F='D'  where ARTICLE_SEQ=150301"
+#            query = "update TBCB_BOARD_ARTICLE set TITLE='@@runDMS@@20160101@@', NAME='', EMAIL='', CONTENT='',TYPE_F='D'  where ARTICLE_SEQ=150301"
             console.log('!!!query!!!')
             console.log(query)
             cp = require 'child_process'
